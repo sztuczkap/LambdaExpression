@@ -16,10 +16,20 @@ public class Main {
                     System.out.println(i);
                 }
             }
-        };*/
+        };
 
         // wyrazenie zwracajace roznice dlugosci znakow dla 2 zmiennych typu String
         Comparator<String> comparator = (first, second) -> first.length() - second.length();
-        System.out.println(comparator.compare("pierwszy", "drugi"));
+        System.out.println(comparator.compare("pierwszy", "drugi"));*/
+
+        executeForEvenNumber(1, () -> System.out.println("To jest liczba 1"));
+        executeForEvenNumber(2, () -> System.out.println("To jest liczba 2"));
+
+    }
+
+    private static void executeForEvenNumber(int number, Runnable action) {
+        if (number % 2 == 0) {
+            action.run();
+        }
     }
 }
